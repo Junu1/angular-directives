@@ -1,0 +1,14 @@
+<div class="container">
+  <select class="form-control" (change)="getValue($event)">
+    <option value="default">Select Address</option>
+    <option value="Kathmandu">Kathmandu</option>
+    <option value="Bhaktapur">Bhaktapur</option>
+    <option value="Lalitpur">Lalitpur</option>
+  </select>
+</div>
+<div class="col-md-12" [ngSwitch]="selectedAddress">
+  <h2 class="text-success" *ngSwitchDefault>Please Select Address</h2>
+  <h2 class="text-success" *ngSwitchCase="'Kathmandu'">Kathmandu</h2>
+  <h2 class="text-success" *ngSwitchCase="'Bhaktapur'">Bhaktapur</h2>
+  <h2 class="text-success" *ngSwitchCase="'Lalitpur'">Lalitpur</h2>
+</div>

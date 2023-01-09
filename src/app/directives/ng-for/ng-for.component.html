@@ -1,0 +1,48 @@
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <td>S.No</td>
+        <td>Name</td>
+        <td>Address</td>
+        <td>Email</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of person; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.address }}</td>
+        <td>{{ p.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <input type="text" class="form-control" #username />
+  <button class="btn btn-success" (click)="onSubmit(username)">
+    Create user
+  </button>
+  <button class="btn btn-danger" (click)="onRemove()">Remove</button>
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <td>S.No</td>
+          <td>Name</td>
+          <td>Remove</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>
+            <button (click)="onRemoveItem(i)">Remove Item</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

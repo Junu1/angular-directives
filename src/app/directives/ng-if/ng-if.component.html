@@ -1,0 +1,10 @@
+<div class="container">
+  <button (click)="submit()">Login</button>
+  <div *ngIf="isValid; then thenBlock else elseBlock"></div>
+  <ng-template #elseBlock>
+    <div>Invalid Details</div>
+  </ng-template>
+  <ng-template #thenBlock>
+    <div>Login successful</div>
+  </ng-template>
+</div>
